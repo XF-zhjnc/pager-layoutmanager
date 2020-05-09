@@ -182,9 +182,13 @@ PagerConfig.setShowLog(true);
 
 ## 6. 添加方式
 
-#### 6.1 添加仓库
+#### 以Module形式依赖或者打包aar
 
-在项目的 `build.gradle` 文件中配置仓库地址。
+
+
+#### ~~6.1 添加仓库~~
+
+~~在项目的 `build.gradle` 文件中配置仓库地址。~~
 
 ```groovy
 allprojects {
@@ -196,9 +200,9 @@ allprojects {
 }
 ```
 
-#### 6.2 添加项目依赖
+#### ~~6.2 添加项目依赖~~
 
-在需要添加依赖的 Module 下添加以下信息，使用方式和普通的远程仓库一样。
+~~在需要添加依赖的 Module 下添加以下信息，使用方式和普通的远程仓库一样。~~
 
 ```groovy
 implementation 'com.gcssloop.recyclerview:pagerlayoutmanager:2.3.8'

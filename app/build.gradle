@@ -13,36 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  *
- * Last modified 2017-09-18 23:38:56
+ * Last modified 2017-09-18 23:40:20
  *
  * GitHub: https://github.com/GcsSloop
  * WeiBo: http://weibo.com/GcsSloop
  * WebSite: http://www.gcssloop.com
  */
 
-apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 25
-    buildToolsVersion "25.0.3"
-
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
     defaultConfig {
-        minSdkVersion 7
-        targetSdkVersion 25
+        applicationId "com.gcssloop.pagelayoutmanager"
+        minSdkVersion 14
+        targetSdkVersion 28
         versionCode 1
         versionName "1.0"
     }
 }
 
 dependencies {
-    compile 'com.android.support:recyclerview-v7:25.3.1'
-}
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
 
-// 上传信息
-ext {
-    GROUP_ID = "com.gcssloop.recyclerview"
-    ARTIFACT_ID = "pagerlayoutmanager"
-    VERSION = "2.3.8"
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    api project(':pagerlayoutmanager')
 }
-
-apply from: "/Applications/nexus/pack/pack-upload.gradle"
