@@ -233,15 +233,14 @@ public class PagerGridLayoutManager extends RecyclerView.LayoutManager
         displayRect.intersect(0, 0, mMaxScrollX + getUsableWidth(), mMaxScrollY + getUsableHeight());
         Loge("displayRect = " + displayRect.toString());
 
-        int startPos = 0;                  // 获取第一个条目的Pos
         int pageIndex = getPageIndexByOffset();
-        startPos = pageIndex * mOnePageSize;
-        Logi("startPos = " + startPos);
-        startPos = startPos - mOnePageSize * 2;
+        int curPageFirstPos = pageIndex * mOnePageSize; // 获取当前展示页第一个条目的pos
+        Logi("curPageFirstPos = " + curPageFirstPos);
+        int startPos = curPageFirstPos - mOnePageSize;
         if (startPos < 0) {
             startPos = 0;
         }
-        int stopPos = startPos + mOnePageSize * 4;
+        int stopPos = curPageFirstPos + mOnePageSize * 2;
         if (stopPos > getItemCount()) {
             stopPos = getItemCount();
         }
